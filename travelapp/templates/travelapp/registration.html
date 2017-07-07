@@ -1,0 +1,13 @@
+<div align = "center">
+  <tr>
+    <form method = "post " action = "travelapp/registration.html">
+       {%block content%}
+       {% csrf_token %}
+       
+       {{form.as_p}}
+       
+       < <button class = "btn btn-lg btn-primary btn-block" name="Submit" value= "submit" type =   "submit">submit</button>
+         </form>
+         {% endblock %}
+      </tr>
+  </div>

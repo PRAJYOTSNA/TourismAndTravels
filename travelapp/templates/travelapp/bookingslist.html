@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color:#003366;
+    }
+    .navbar1 {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color:#66b3ff;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color:#3f76e2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 45%; /* Set width to 100% */
+      margin: auto;
+      min-height:100px;
+      
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body>
+    <style type="text/css">
+   body { background:#fffcfc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Tours and Travels</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="http://127.0.0.1:8000/travelapp/homepage1/">Home</a></li>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Packages <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Domestic Tours</a></li>
+          <li><a href="#">Seasonal Tours</a></li>
+          <li><a href="#">Top Destinations</a></li>
+        </ul>
+      </li>
+        
+        <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><div class="input-group">
+  <input type="text" class="form-control" placeholder="Search" align="center"/>
+  <div class="input-group-btn">
+  <button class="btn btn-default" type="submit">
+  <i class="glyphicon glyphicon-search"></i>
+  </button>
+  </div>
+  </div>
+  </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+ 
+ </div>
+ <!--    <div class="input-group">
+    <input type="text" class="form-control"/>
+        <a href="#" class="btn btn-primary btn-sm">search <span class="glyphicon glyphicon-search"></span></a>
+</div> -->
+ </div>
+ </nav>
+
+
+{% load static %}
+
+<div class="container-fluid">
+  
+  <font color ="Blue"><center><h1>Bookings List</h1></center></font>
+  
+  <div class="row">
+    {% for statename in state %}
+            
+        
+     
+            <h4>Package : {{statename.packageid}}</h4>
+            <h4>Travelling Date : {{statename.travelling_date}}</h4>
+            <h4>Amount : {{statename.amount}}</h4><br>
+            <h4>No. of Persons : {{statename.no_of_persons}}</h4><br>
+          
+                      <a href = "/travelapp/cancelbook"><button type="button" class="btn btn-danger">Cancel Booking</button></a>
+            
+                    <b1>
+                    <a href = "/travelapp/description/Jeep safari and Horse safari"><button type="button" class="btn btn-primary">View Details</button></a>
+                    </div></b1><br>
+                     
+                     {% endfor %}
+  </div>
+          <div class="col-sm-4">
+     </div>
+</div>
+
+
+
+
+</body>
+</html>

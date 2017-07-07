@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color:#003366;
+    }
+    .navbar1 {
+      margin-bottom: 0;
+      border-radius: 0;
+      background-color:#66b3ff;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color:#3f76e2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 45%; /* Set width to 100% */
+      margin: auto;
+      min-height:100px;
+      
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body>
+    <style type="text/css">
+   body { background:#fffcfc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Tours and Travels</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Packages <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Domestic Tours</a></li>
+          <li><a href="#">Seasonal Tours</a></li>
+          <li><a href="#">Top Destinations</a></li>
+        </ul>
+      </li>
+        <li><a href="#">Bookings List</a></li>
+        <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><div class="input-group">
+  <input type="text" class="form-control" placeholder="Search" align="center"/>
+  <div class="input-group-btn">
+  <button class="btn btn-default" type="submit">
+  <i class="glyphicon glyphicon-search"></i>
+  </button>
+  </div>
+  </div>
+  </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+ 
+ </div>
+ <!--    <div class="input-group">
+    <input type="text" class="form-control"/>
+        <a href="#" class="btn btn-primary btn-sm">search <span class="glyphicon glyphicon-search"></span></a>
+</div> -->
+ </div>
+ </nav>
+
+
+{% load static %}
+
+<div class="container-fluid">
+  
+  <h1>{{state.0.stateid}}</h1>
+  
+  <div class="row">
+    {% for statename in state %}
+            
+        <div class="col-sm-4" ><img src="{% get_media_prefix %}{{statename.image}}" alt="not found" width = "350" height = "250">
+        </div>
+     
+       <font color ="Blue"><h1><strong>{{statename.mapid}}</strong></h1></font>
+            <h4>Region : {{statename.stateid}}</h4>
+            <h4>Price : Rs.{{statename.travelling_charges}}/-</h4><br>
+            
+          
+                      <a href = "/travelapp/bookNow""><button type="button" class="btn btn-primary">Book Now</button></a>
+            
+                    <b1>
+                    <a href = "/travelapp/description/{{statename.mapid}}"><button type="button" class="btn btn-primary">View Details</button></a>
+                    </div></b1><br>
+                     
+                     {% endfor %}
+  </div>
+          <div class="col-sm-4">
+     </div>
+</div>
+
+
+
+
+</body>
+</html>

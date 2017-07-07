@@ -1,0 +1,18 @@
+<html>
+<body>
+    <h1>Munnar</h1>
+    {% load static %}
+    <table>
+        <td></br>
+            <tr><img src = "{% get_media_prefix %}{{coastline.2.image}}" width = 350 height = 250></br></br></br></tr>
+            <tr><b>Description: </b>{{coastline.2.description}}</tr></br></br>
+            <b>No. of days: </b><tr>{{coastline.2.no_of_days}}</tr></br></br>
+            <tr><b>Ratings:</b> {{coastline.2.ratings}}</tr></br></br>
+            <tr><b>Category:</b> {{coastline.2.category}}</tr></br></br>
+            <tr><button type = "button" class = "btn btn-primary">Book now</button></tr>
+        </td>
+    </table>
+    
+    
+</body>
+</html>

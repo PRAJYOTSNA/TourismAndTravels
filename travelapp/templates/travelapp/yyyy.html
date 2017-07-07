@@ -1,0 +1,108 @@
+<html>
+
+
+<body>
+{% extends 'travelapp/states.html' %}
+{% load static %}
+<img src="{% static "A.jpg" %}" alt="My image"/>
+
+
+{% block content %}
+<div>
+  <div class="col-lg-3 sidenav" style="background-color:lavender;">
+  <h1> States List<h1>
+	{% if state %}
+		<div id="horizontalmenu" float = "right">
+			<ul class="link">
+        			{% for c in state %}
+		        		<li> <a href= "#add">{{c.state}}</a>
+                       <button type="button" class="btn">+</button>             
+                </li>
+				{% endfor %}
+    		
+			</ul>
+		</div>
+	{% else %}
+		<p> Haiiii there are no categories </p>
+	{% endif %}
+
+
+</div>
+     
+  <div class="col-lg-5"  id="add" style="background-color:lavenderblush;">
+   <div class="container" display ="none">
+             
+  <button type="button" class="btn btn-info btn-block">tutorials</button>
+
+           
+  <button type="button" class="btn btn-info btn-block">advertisements</button>
+ 
+         
+  <button type="button" class="btn btn-info btn-block">following</button>
+ </div> 
+</div>
+  
+</div>
+
+
+
+{% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+travelapp/coorg.jpg
+Mysore – Coorg (150 KMS – 03 Hrs)  On the way to coorg, visit Buddhist vihara (Golden Temple) , visit Dubare Elephant Camps , NisargaDham.,abbey falls upon arrival check into Hotel. Day at leisure. Overnight stay at the Hotel in Coorg.
+Domestic tour
+
+travelapp/munnar.jpg
+Kochi - Kaladi – Munnar (145kms - 5 Hrs)  You will be driven towards Munnar, en route visit Kalady. It is the birthplace of Sri Adi Shankaracharya. After visit Kalady, Proceed to Munnar. Munnar, breathtakingly beautiful, a heaven of peace and tranquility, the idyllic tourist destination in God's own country. It is such a beautiful place in Kerala, which cannot be portrayed in a single canvas. Over Night at Munnar.
+Seasonal
+
+travelapp/kochi.jpg
+
+ARRIVE KOCHI  Welcome to Kerala, Kochi - a major port city on the south west coast of India. It is widely referred to as the commercial capital of Kerala. Enjoy Kochi Boat Tour wherein you see Bolghatty Palace, Matanchey Island, Jewish Synagogue, Chinese Fishing Net. Over Night at Kochi.
+
+
+Seasonal
+
+travelapp/coastline.jpg
+ARRIVE HUBLI- SIRSI ( 104 KMS- 3 HRS)  WELCOME TO HUBLI . You will be driven to Sirsi. Sirsi was also known as Kalyanapattana during the Sonda Dynasty. Sirsi is famous for the Sri Marikamba temple famous for its Kavi art. The Sirsi Marikamba temple is decorated with Kavi art on both sides of its walls. Close to the Marikamba temple are the temples dedicated to Maha Ganapati and Shri Gopalakrishna. Over Night at Sirsi.
+Domestic tour
+

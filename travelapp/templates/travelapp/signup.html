@@ -1,0 +1,10 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>{% block content %}
+  <h2>Sign up</h2>
+  <form method="post" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+</body></html>
